@@ -8,13 +8,16 @@
         HServlet
     </display-name>
 
+    <welcome-file-list>
+        <welcome-file>Index.ftl</welcome-file>
+    </welcome-file-list>
 
     <servlet>
         <servlet-name>freemarker</servlet-name>
         <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
         <init-param>
             <param-name>TemplatePath</param-name>
-            <param-value>/</param-value>
+            <param-value>/templates/ftl/</param-value>
         </init-param>
 
         <init-param>
@@ -27,7 +30,9 @@
         <servlet-name>freemarker</servlet-name>
         <url-pattern>*.ftl</url-pattern>
     </servlet-mapping>
-
-
-
+    <error-page>
+        <location>/handle</location>
+    </error-page>
 </web-app>
+
+
